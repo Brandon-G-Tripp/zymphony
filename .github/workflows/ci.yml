@@ -1,0 +1,26 @@
+name: CI 
+
+on: 
+  push: 
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Zig 
+        run: |
+          wget https://ziglang.org/download/0.10.0/zig-linux-x86_64-0.10.0.tar.xz
+          tar -xf zig-linux-x86_64-0.10.0 /usr/local/zig
+
+      - name: Build
+        run: zig build
+
+      - name: Run tests
+        run: zig build test
+

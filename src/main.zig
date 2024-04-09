@@ -15,12 +15,16 @@ pub fn main() !void {
     }
 }
 
+fn someOperation() !u32 {
+    return 42;
+}
+
 fn loadConfig(path: []const u8) !void {
     if (std.mem.eql(u8, path, "config.json")) {
         return zymphony_error.ZymphonyError.FileNotFound;
     } else if (std.mem.eql(u8, path, "invalid.json")) {
         return zymphony_error.ZymphonyError.InvalidConfig;
-    } 
+    }
 }
 
 test "simple test" {

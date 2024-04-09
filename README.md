@@ -2,7 +2,7 @@
 
 Zymphony is a powerful and efficient VM orchestration application built with Zig. It provides a harmonious and coordinated management of virtual machines, allowing users to easily create, manage, and monitor VMs.
 
-## Features
+## Feature Goals
 
 - Create and manage VMs with ease
 - Intuitive command-line interface

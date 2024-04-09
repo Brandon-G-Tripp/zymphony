@@ -13,10 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Zig 
-        run: |
-          wget https://ziglang.org/download/0.10.0/zig-linux-x86_64-0.10.0.tar.xz
-          tar -xf zig-linux-x86_64-0.10.0 /usr/local/zig
+      - name: Setup Zig 
+        uses: goto-bus-stop/setup-zig@v2
+        with: 
+          version: 0.10.1
 
       - name: Build
         run: zig build
